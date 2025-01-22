@@ -1,0 +1,14 @@
+services:
+  node-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/var/www/nodejs-ubuntu-docker-setup
+    networks:
+      - node-network
+    restart: always
+
+networks:
+  node-network:
+    driver: bridge
